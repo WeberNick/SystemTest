@@ -1,0 +1,57 @@
+﻿GAS LISTING /tmp/cc5bKK3P.s 			page 1
+
+   1:Six.cc        **** #include <iostream>
+   2:Six.cc        **** int main(){
+  23 0000 53       		pushq	%rbx
+  27 0001 BE00CA9A 		movl	$1000000000, %esi
+  27      3B
+   3:Six.cc        **** 	const long long n = 1000L * 1000L * 1000L;
+   4:Six.cc        **** 	unsigned int la =  3;
+   5:Six.cc        **** 	unsigned int lb =  5;
+   6:Six.cc        **** 	unsigned int lc =  7;
+   7:Six.cc        **** 	unsigned int ld = 11;
+   8:Six.cc        **** 	unsigned int le = 13;
+   9:Six.cc        **** 	unsigned int lf = 17;
+  29 0006 BA110000 		movl	$17, %edx
+  29      00
+   8:Six.cc        **** 	unsigned int lf = 17;
+  31 000b B90D0000 		movl	$13, %ecx
+  31      00
+   7:Six.cc        **** 	unsigned int le = 13;
+  33 0010 BB0B0000 		movl	$11, %ebx
+  33      00
+   6:Six.cc        **** 	unsigned int ld = 11;
+  35 0015 B8070000 		movl	$7, %eax
+  35      00
+  37      0000
+  10:Six.cc        **** 
+  11:Six.cc        **** 	for(int i = 0L; i < n; ++i){
+  12:Six.cc        **** 		la = lc ^ ld;
+  42 0020 31D8     		xorl	%ebx, %eax
+  13:Six.cc        **** 		lb = ld ^ le;
+  45 0022 89DF     		movl	%ebx, %edi
+  12:Six.cc        **** 		lb = ld ^ le;
+  47 0024 4189C0   		movl	%eax, %r8d
+  14:Six.cc        **** 		lc = le ^ lf;
+  50 0027 89C8     		movl	%ecx, %eax
+  13:Six.cc        **** 		lb = ld ^ le;
+  53 0029 31CF     		xorl	%ecx, %edi
+  56 002b 31D0     		xorl	%edx, %eax
+  15:Six.cc        ****       	ld = lf ^ la;
+  59 002d 4431C2   		xorl	%r8d, %edx
+  16:Six.cc        **** 		le = la ^ lb;
+  62 0030 4489C1   		movl	%r8d, %ecx
+  15:Six.cc        ****       	ld = lf ^ la;
+  65 0033 89D3     		movl	%edx, %ebx
+  17:Six.cc        **** 		lf = lb ^ lc;
+  68 0035 89FA     		movl	%edi, %edx
+  16:Six.cc        **** 		le = la ^ lb;
+  71 0037 31F9     		xorl	%edi, %ecx
+  74 0039 31C2     		xorl	%eax, %edx
+  11:Six.cc        **** 		la = lc ^ ld;
+  77 003b 83EE01   		subl	$1, %esi
+  78 003e 75E0     		jne	.L2
+  18:Six.cc        **** 	}
+  19:Six.cc        **** 	std::cout << "// " << (la^lb^lc^ld^le^lf) << std::endl;
+  81 0040 31D3     		xorl	%edx, %ebx
+  20:Six.cc        **** }

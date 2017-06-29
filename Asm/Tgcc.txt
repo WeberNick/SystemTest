@@ -1,0 +1,104 @@
+﻿GAS LISTING /tmp/ccD7DIXe.s 			page 1
+
+   1:Twelve.cc     **** #include <iostream>
+   2:Twelve.cc     **** int main(){
+  23 0000 4155     		pushq	%r13
+  26 0002 4154     		pushq	%r12
+  29 0004 41BA00CA 		movl	$1000000000, %r10d
+  29      9A3B
+  30 000a 55       		pushq	%rbp
+  33 000b 53       		pushq	%rbx
+   3:Twelve.cc     **** 	const long long n = 1000L * 1000L * 1000L;
+   4:Twelve.cc     **** 	unsigned int la =  3;
+   5:Twelve.cc     **** 	unsigned int lb =  5;
+   6:Twelve.cc     **** 	unsigned int lc =  7;
+   7:Twelve.cc     **** 	unsigned int ld = 11;
+   8:Twelve.cc     **** 	unsigned int le = 13;
+   9:Twelve.cc     **** 	unsigned int lf = 17;
+  10:Twelve.cc     **** 	unsigned int lg = 1717171717;
+  11:Twelve.cc     **** 	unsigned int lh = 2171717171;
+  12:Twelve.cc     **** 	unsigned int li = 19;
+  13:Twelve.cc     **** 	unsigned int lj = 33;
+  14:Twelve.cc     **** 	unsigned int lk = 33;
+  15:Twelve.cc     **** 	unsigned int ll = 44;
+  37 000c BF2C0000 		movl	$44, %edi
+  37      00
+  14:Twelve.cc     **** 	unsigned int ll = 44;
+  39 0011 41B92100 		movl	$33, %r9d
+  39      0000
+  13:Twelve.cc     **** 	unsigned int lk = 33;
+  41 0017 BB210000 		movl	$33, %ebx
+  41      00
+  12:Twelve.cc     **** 	unsigned int lj = 33;
+  43 001c 41B81300 		movl	$19, %r8d
+  43      0000
+   2:Twelve.cc     **** 	unsigned int lb =  5;
+  45 0022 4883EC08 		subq	$8, %rsp
+  11:Twelve.cc     **** 	unsigned int li = 19;
+  48 0026 BE33C671 		movl	$-2123250125, %esi
+  48      81
+  10:Twelve.cc     **** 	unsigned int lh = 2171717171;
+  50 002b B905F659 		movl	$1717171717, %ecx
+  50      66
+   9:Twelve.cc     **** 	unsigned int lg = 1717171717;
+  52 0030 BA110000 		movl	$17, %edx
+  52      00
+   8:Twelve.cc     **** 	unsigned int lf = 17;
+  54 0035 B80D0000 		movl	$13, %eax
+  16:Twelve.cc     **** 
+  17:Twelve.cc     **** 	for(int i = 0L; i < n; ++i){
+  18:Twelve.cc     **** 		la = le ^ lf;
+  61 0040 31D0     		xorl	%edx, %eax
+  19:Twelve.cc     **** 	    lb = lf ^ lg;
+  64 0042 31CA     		xorl	%ecx, %edx
+  20:Twelve.cc     **** 	    lc = lg ^ lh;
+  67 0044 31F1     		xorl	%esi, %ecx
+  18:Twelve.cc     **** 	    lb = lf ^ lg;
+  70 0046 4189C5   		movl	%eax, %r13d
+  21:Twelve.cc     **** 	    ld = lh ^ li;
+  73 0049 4431C6   		xorl	%r8d, %esi
+  20:Twelve.cc     **** 	    lc = lg ^ lh;
+  76 004c 89CD     		movl	%ecx, %ebp
+  22:Twelve.cc     **** 	    le = li ^ lj;
+  78 004e 4489C0   		movl	%r8d, %eax
+  23:Twelve.cc     **** 	    lf = lj ^ lk;
+  24:Twelve.cc     **** 	    lg = lk ^ ll;
+  81 0051 4489C9   		movl	%r9d, %ecx
+  19:Twelve.cc     **** 	    lc = lg ^ lh;
+  83 0054 4189D4   		movl	%edx, %r12d
+  21:Twelve.cc     **** 	    le = li ^ lj;
+  86 0057 4189F3   		movl	%esi, %r11d
+  22:Twelve.cc     **** 	    lf = lj ^ lk;
+  89 005a 31D8     		xorl	%ebx, %eax
+  92 005c 31F9     		xorl	%edi, %ecx
+  23:Twelve.cc     **** 	    lg = lk ^ ll;
+  94 005e 4431CB   		xorl	%r9d, %ebx
+  25:Twelve.cc     **** 	    lh = ll ^ la;
+  97 0061 4431EF   		xorl	%r13d, %edi
+  26:Twelve.cc     **** 	    li = la ^ lb;
+ 100 0064 4589E8   		movl	%r13d, %r8d
+  23:Twelve.cc     **** 	    lg = lk ^ ll;
+ 103 0067 89DA     		movl	%ebx, %edx
+  25:Twelve.cc     **** 	    lh = ll ^ la;
+ 106 0069 89FE     		movl	%edi, %esi
+  27:Twelve.cc     **** 	    lj = lb ^ lc;
+ 109 006b 4489E3   		movl	%r12d, %ebx
+  28:Twelve.cc     **** 	    lk = lc ^ ld;
+ 111 006e 4189E9   		movl	%ebp, %r9d
+  29:Twelve.cc     **** 	    ll = ld ^ le;
+ 114 0071 4489DF   		movl	%r11d, %edi
+  26:Twelve.cc     **** 	    lj = lb ^ lc;
+ 116 0074 4531E0   		xorl	%r12d, %r8d
+  27:Twelve.cc     **** 	    lk = lc ^ ld;
+ 119 0077 31EB     		xorl	%ebp, %ebx
+  28:Twelve.cc     **** 	    ll = ld ^ le;
+ 122 0079 4531D9   		xorl	%r11d, %r9d
+ 125 007c 31C7     		xorl	%eax, %edi
+  17:Twelve.cc     **** 		la = le ^ lf;
+ 128 007e 4183EA01 		subl	$1, %r10d
+ 129 0082 75BC     		jne	.L2
+  30:Twelve.cc     **** 	}
+  31:Twelve.cc     **** 	std::cout << "// " << (la^lb^lc^ld^le^lf^lg^lh^li^lj^lk^ll) << std::endl;
+ 131              		.loc 1 31 0
+ 132 0084 31FB     		xorl	%edi, %ebx
+  32:Twelve.cc     **** }...

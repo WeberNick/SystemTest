@@ -1,0 +1,16 @@
+no cpu/1
+no cores/4
+no threads/8
+vendor/Intel
+clockticks/3600000000
+cycle [ns]/0.277778
+total ram/16745484288
+pagesize/4096
+sequential read [ns]/0.52782
+random read [ns]/9.22578
+factor/17.479
+XOR [ns]/0.136143
+X^=A[i]^B[i] [ns]/0.4664
+X[i]^=A[i]^B[i] [ns]/0.7834
+case jump [ns]/5.95402
+fptr jump [ns]/6.52046

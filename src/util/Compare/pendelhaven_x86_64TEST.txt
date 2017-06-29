@@ -1,0 +1,8 @@
+no cpu/1
+no cores/4
+no threads/4
+vendor/Intel
+clockticks/3300289000
+cycle [ns]/0.303004
+total ram/16473608192
+pagesize/4096

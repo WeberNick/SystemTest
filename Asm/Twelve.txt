@@ -1,0 +1,157 @@
+﻿GAS LISTING /tmp/icpcqawcoI.s 			page 1
+
+   1:Twelve.cc     **** #include <iostream>
+   2:Twelve.cc     **** int main(){
+  21 0000 55       	        pushq     %rbp
+  24 0001 4889E5   	        movq      %rsp, %rbp
+  28 0004 4883E480 	        andq      $-128, %rsp
+  30 0008 4154     	        pushq     %r12
+  32 000a 4155     	        pushq     %r13
+  34 000c 4156     	        pushq     %r14
+  36 000e 4157     	        pushq     %r15
+  38 0010 53       	        pushq     %rbx
+  40 0011 4883EC58 	        subq      $88, %rsp
+  42 0015 31F6     	        xorl      %esi, %esi
+  44 0017 BF030000 	        movl      $3, %edi
+  44      00
+  46 001c E8000000 	        call      __intel_new_feature_proc_init
+  46      00
+  55 0021 0FAE1C24 	        stmxcsr   (%rsp)
+   3:Twelve.cc     **** 	const long long n = 1000L * 1000L * 1000L;
+   4:Twelve.cc     **** 	unsigned int la =  3;
+   5:Twelve.cc     **** 	unsigned int lb =  5;
+   6:Twelve.cc     **** 	unsigned int lc =  7;
+   7:Twelve.cc     **** 	unsigned int ld = 11;
+   8:Twelve.cc     **** 	unsigned int le = 13;
+   9:Twelve.cc     **** 	unsigned int lf = 17;
+  10:Twelve.cc     **** 	unsigned int lg = 1717171717;
+  11:Twelve.cc     **** 	unsigned int lh = 2171717171;
+  12:Twelve.cc     **** 	unsigned int li = 19;
+  13:Twelve.cc     **** 	unsigned int lj = 33;
+  58 0025 41BE2100 	        movl      $33, %r14d
+  58      0000
+   8:Twelve.cc     **** 	unsigned int lf = 17;
+  61 002b B90D0000 	        movl      $13, %ecx
+  61      00
+   2:Twelve.cc     **** 	const long long n = 1000L * 1000L * 1000L;
+  64 0030 810C2440 	        orl       $32832, (%rsp)
+  64      800000
+   9:Twelve.cc     **** 	unsigned int lg = 1717171717;
+  67 0037 41B81100 	        movl      $17, %r8d
+  67      0000
+   2:Twelve.cc     **** 	const long long n = 1000L * 1000L * 1000L;
+  70 003d 0FAE1424 	        ldmxcsr   (%rsp)
+  10:Twelve.cc     **** 	unsigned int lh = 2171717171;
+  73 0041 41B905F6 	        movl      $1717171717, %r9d
+  73      5966
+  11:Twelve.cc     **** 	unsigned int li = 19;
+  75              		.loc    1  11  is_stmt 1
+  76 0047 BA33C671 	        movl      $-2123250125, %edx
+  76      81
+  12:Twelve.cc     **** 	unsigned int lj = 33;
+  79 004c 41BF1300 	        movl      $19, %r15d
+  79      0000
+  14:Twelve.cc     **** 	unsigned int lk = 33;
+  82 0052 4589F5   	        movl      %r14d, %r13d
+  15:Twelve.cc     **** 	unsigned int ll = 44;
+  85 0055 41BC2C00 	        movl      $44, %r12d
+  85      0000
+  16:Twelve.cc     **** 
+  17:Twelve.cc     **** 	for(int i = 0L; i < n; ++i){
+  88 005b 31C0     	        xorl      %eax, %eax
+  91		# optimization report
+  92		# %s was not vectorized: vector dependence prevents vectorization%s
+  93      	# VECTOR TRIP COUNT IS KNOWN CONSTANT
+  18:Twelve.cc     **** 		la = le ^ lf;
+  96 005d 89CF     	        movl      %ecx, %edi
+  19:Twelve.cc     **** 	    lb = lf ^ lg;
+  99 005f 4589C2   	        movl      %r8d, %r10d
+  20:Twelve.cc     **** 	    lc = lg ^ lh;
+ 102 0062 4489CB   	        movl      %r9d, %ebx
+  21:Twelve.cc     **** 	    ld = lh ^ li;
+  22:Twelve.cc     **** 	    le = li ^ lj;
+ 105 0065 4489F9   	        movl      %r15d, %ecx
+  18:Twelve.cc     **** 	    lb = lf ^ lg;
+ 108 0068 4431C7   	        xorl      %r8d, %edi
+  19:Twelve.cc     **** 	    lc = lg ^ lh;
+ 111 006b 4531CA   	        xorl      %r9d, %r10d
+  20:Twelve.cc     **** 	    ld = lh ^ li;
+ 114 006e 31D3     	        xorl      %edx, %ebx
+  21:Twelve.cc     **** 	    le = li ^ lj;
+ 117 0070 4189D3   	        movl      %edx, %r11d
+ 120 0073 4431F1   	        xorl      %r14d, %ecx
+  23:Twelve.cc     **** 	    lf = lj ^ lk;
+ 123 0076 4589F0   	        movl      %r14d, %r8d
+  24:Twelve.cc     **** 	    lg = lk ^ ll;
+ 126 0079 4589E9   	        movl      %r13d, %r9d
+  21:Twelve.cc     **** 	    le = li ^ lj;
+ 129 007c 4531FB   	        xorl      %r15d, %r11d
+  23:Twelve.cc     **** 	    lf = lj ^ lk;
+ 132 007f 4531E8   	        xorl      %r13d, %r8d
+ 135 0082 4531E1   	        xorl      %r12d, %r9d
+  25:Twelve.cc     **** 	    lh = ll ^ la;
+ 138 0085 4489E2   	        movl      %r12d, %edx
+  26:Twelve.cc     **** 	    li = la ^ lb;
+ 141 0088 4189FF   	        movl      %edi, %r15d
+  27:Twelve.cc     **** 	    lj = lb ^ lc;
+ 144 008b 4589D6   	        movl      %r10d, %r14d
+  28:Twelve.cc     **** 	    lk = lc ^ ld;
+ 147 008e 4189DD   	        movl      %ebx, %r13d
+  29:Twelve.cc     **** 	    ll = ld ^ le;
+ 150 0091 4189CC   	        movl      %ecx, %r12d
+  17:Twelve.cc     **** 		la = le ^ lf;
+ 153 0094 FFC0     	        incl      %eax
+  25:Twelve.cc     **** 	    li = la ^ lb;
+ 156 0096 31FA     	        xorl      %edi, %edx
+  26:Twelve.cc     **** 	    lj = lb ^ lc;
+ 159 0098 4531D7   	        xorl      %r10d, %r15d
+  27:Twelve.cc     **** 	    lk = lc ^ ld;
+ 162 009b 4131DE   	        xorl      %ebx, %r14d
+  28:Twelve.cc     **** 	    ll = ld ^ le;
+ 165 009e 4531DD   	        xorl      %r11d, %r13d
+ 168 00a1 4531DC   	        xorl      %r11d, %r12d
+  17:Twelve.cc     **** 		la = le ^ lf;
+ 171 00a4 3D00CA9A 	        cmpl      $1000000000, %eax
+ 171      3B
+ 173 00a9 7CB2     	        jl        ..B1.2
+  30:Twelve.cc     **** 	}
+  31:Twelve.cc     **** 	std::cout << "// " << (la^lb^lc^ld^le^lf^lg^lh^li^lj^lk^ll) << std::endl;
+ 178 00ab BF000000 	        movl      $_ZSt4cout, %edi
+ 178      00
+ 180 00b0 BE000000 	        movl      $.L_2__STRING.0, %esi
+ 180      00
+ 182 00b5 44891C24 	        movl      %r11d, (%rsp)
+ 184 00b9 894C2408 	        movl      %ecx, 8(%rsp)
+ 186 00bd 44894424 	        movl      %r8d, 16(%rsp)
+ 186      10
+ 188 00c2 44894C24 	        movl      %r9d, 24(%rsp)
+ 188      18
+ 190 00c7 89542420 	        movl      %edx, 32(%rsp)
+ 193 00cb E8000000 	        call      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 193      00
+ 198 00d0 8B542420 	        movl      32(%rsp), %edx
+ 200 00d4 448B4C24 	        movl      24(%rsp), %r9d
+ 200      18
+ 202 00d9 448B4424 	        movl      16(%rsp), %r8d
+ 202      10
+ 204 00de 8B4C2408 	        movl      8(%rsp), %ecx
+ 208 00e2 4431FB   	        xorl      %r15d, %ebx
+ 210 00e5 4889C7   	        movq      %rax, %rdi
+ 212 00e8 331C24   	        xorl      (%rsp), %ebx
+ 214 00eb 31CB     	        xorl      %ecx, %ebx
+ 216 00ed 4431C3   	        xorl      %r8d, %ebx
+ 218 00f0 4431CB   	        xorl      %r9d, %ebx
+ 220 00f3 31D3     	        xorl      %edx, %ebx
+ 222 00f5 4431FB   	        xorl      %r15d, %ebx
+ 224 00f8 4431F3   	        xorl      %r14d, %ebx
+ 226 00fb 4431EB   	        xorl      %r13d, %ebx
+ 228 00fe 4431E3   	        xorl      %r12d, %ebx
+ 230 0101 89DE     	        movl      %ebx, %esi
+ 233 0103 E8000000 	        call      _ZNSolsEj
+ 233      00
+ 238 0108 4889C7   	        movq      %rax, %rdi
+ 240 010b BE000000 	        movl      $_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 240      00
+ 243 0110 E8000000 	        call      _ZNSolsEPFRSoS_E
+ 243      00
+  32:Twelve.cc     **** }

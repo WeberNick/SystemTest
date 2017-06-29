@@ -1,0 +1,95 @@
+﻿GAS LISTING /tmp/icpcDuqKCj.s 			page 1
+
+   1:Six.cc        **** #include <iostream>
+   2:Six.cc        **** int main(){
+  21 0000 55       	        pushq     %rbp
+  24 0001 4889E5   	        movq      %rsp, %rbp
+  28 0004 4883E480 	        andq      $-128, %rsp
+  30 0008 4155     	        pushq     %r13
+  32 000a 4156     	        pushq     %r14
+  34 000c 4157     	        pushq     %r15
+  36 000e 53       	        pushq     %rbx
+  38 000f 4883EC60 	        subq      $96, %rsp
+  40 0013 31F6     	        xorl      %esi, %esi
+  42 0015 BF030000 	        movl      $3, %edi
+  42      00
+  44 001a E8000000 	        call      __intel_new_feature_proc_init
+  44      00
+  52 001f 0FAE1C24 	        stmxcsr   (%rsp)
+   3:Six.cc        **** 	const long long n = 1000L * 1000L * 1000L;
+   4:Six.cc        **** 	unsigned int la =  3;
+   5:Six.cc        **** 	unsigned int lb =  5;
+   6:Six.cc        **** 	unsigned int lc =  7;
+  55 0023 41BF0700 	        movl      $7, %r15d
+  55      0000
+   7:Six.cc        **** 	unsigned int ld = 11;
+  58 0029 41BE0B00 	        movl      $11, %r14d
+  58      0000
+   2:Six.cc        **** 	unsigned int lb =  5;
+  61 002f 810C2440 	        orl       $32832, (%rsp)
+  61      800000
+   8:Six.cc        **** 	unsigned int le = 13;
+  64 0036 41BD0D00 	        movl      $13, %r13d
+  64      0000
+   2:Six.cc        **** 	unsigned int lb =  5;
+  67 003c 0FAE1424 	        ldmxcsr   (%rsp)
+   9:Six.cc        **** 	unsigned int lf = 17;
+  70 0040 BB110000 	        movl      $17, %ebx
+  70      00
+  10:Six.cc        **** 
+  11:Six.cc        **** 	for(int i = 0L; i < n; ++i){
+  73 0045 31C0     	        xorl      %eax, %eax
+  76		# optimization report
+  77		# %s was not vectorized: vector dependence prevents vectorization%s
+  78		# VECTOR TRIP COUNT IS KNOWN CONSTANT
+  12:Six.cc        **** 		la = lc ^ ld;
+  81 0047 4489FA   	        movl      %r15d, %edx
+  13:Six.cc        **** 		lb = ld ^ le;
+  14:Six.cc        **** 		lc = le ^ lf;
+  84 004a 4589EF   	        movl      %r13d, %r15d
+  12:Six.cc        **** 		la = lc ^ ld;
+  87 004d 4431F2   	        xorl      %r14d, %edx
+  13:Six.cc        **** 		lb = ld ^ le;G
+  90 0050 4489F1   	        movl      %r14d, %ecx
+  93 0053 4131DF   	        xorl      %ebx, %r15d
+  13:Six.cc        **** 		lb = ld ^ le;
+  96 0056 4431E9   	        xorl      %r13d, %ecx
+  15:Six.cc        ****       	ld = lf ^ la;
+  99 0059 4189DE   	        movl      %ebx, %r14d
+  16:Six.cc        **** 		le = la ^ lb;
+ 102 005c 4189D5   	        movl      %edx, %r13d
+  17:Six.cc        **** 		lf = lb ^ lc;
+ 105 005f 4489FB   	        movl      %r15d, %ebx
+  11:Six.cc        **** 		la = lc ^ ld;
+ 108 0062 FFC0     	        incl      %eax
+  15:Six.cc        **** 		le = la ^ lb;
+ 111 0064 4131D6   	        xorl      %edx, %r14d
+  16:Six.cc        **** 		lf = lb ^ lc;
+ 114 0067 4131CD   	        xorl      %ecx, %r13d
+ 117 006a 31CB     	        xorl      %ecx, %ebx
+  11:Six.cc        **** 		la = lc ^ ld;
+ 120 006c 3D00CA9A 	        cmpl      $1000000000, %eax
+ 120      3B
+ 122 0071 7CD4     	        jl        ..B1.2
+  18:Six.cc        **** 	}
+  19:Six.cc        **** 	std::cout << "// " << (la^lb^lc^ld^le^lf) << std::endl;
+ 127 0073 BF000000 	        movl      $_ZSt4cout, %edi
+ 127      00
+ 129 0078 BE000000 	        movl      $.L_2__STRING.0, %esi
+ 129      00
+ 132 007d E8000000 	        call      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+ 132      00
+ 137 0082 4531EF   	        xorl      %r13d, %r15d
+ 139 0085 4889C7   	        movq      %rax, %rdi
+ 141 0088 4531F7   	        xorl      %r14d, %r15d
+ 143 008b 4531EF   	        xorl      %r13d, %r15d
+ 145 008e 4131DF   	        xorl      %ebx, %r15d
+ 147 0091 4489FE   	        movl      %r15d, %esi
+ 150 0094 E8000000 	        call      _ZNSolsEj
+ 150      00
+ 155 0099 4889C7   	        movq      %rax, %rdi
+ 157 009c BE000000 	        movl      $_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, %esi
+ 157      00
+ 160 00a1 E8000000 	        call      _ZNSolsEPFRSoS_E
+ 160      00
+  20:Six.cc        **** }

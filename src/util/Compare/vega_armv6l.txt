@@ -1,0 +1,16 @@
+no cpu/1
+no cores/1
+no threads/1
+vendor/<no vendor>
+clockticks/700000000
+cycle [ns]/1.42857
+total ram/455712768
+pagesize/4096
+sequential read [ns]/50.8846
+random read [ns]/409.206
+factor/8.04184
+XOR [ns]/1.26611
+X^=A[i]^B[i] [ns]/45.5305
+X[i]^=A[i]^B[i] [ns]/53.817
+case jump [ns]/34.9644
+fptr jump [ns]/40.2334

@@ -1,0 +1,8 @@
+no cpu/2
+no cores/8
+no threads/8
+vendor/ARM
+clockticks/1400000000
+cycle [ns]/0.714286
+total ram/2086522880
+pagesize/4096
